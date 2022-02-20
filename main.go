@@ -41,6 +41,8 @@ func main() {
 		charts.BookingsPerWeekLineChart(bookings),
 	)
 
+	page.PageTitle = "BSport Charts"
+
 	f, err := os.Create("charts.html")
 	if err != nil {
 		panic(err)
