@@ -3,7 +3,7 @@ builds:
       - linux
       - darwin
       - freebsd
-  - goarch:
+    goarch:
       - amd64
       - arm64
 changelog:
