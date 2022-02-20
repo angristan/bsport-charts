@@ -2,7 +2,6 @@ builds:
   - goos:
       - linux
       - darwin
-      - freebsd
 changelog:
   sort: asc
   filters:
