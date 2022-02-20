@@ -1,6 +1,7 @@
 package charts
 
 import (
+	"fmt"
 	"time"
 
 	"github.com/angristan/bsport-charts/api"
@@ -72,7 +73,7 @@ func BookingsHeatMapChart(bookings []api.Booking) *charts.HeatMap {
 	hm := charts.NewHeatMap()
 	hm.SetGlobalOptions(
 		charts.WithTitleOpts(opts.Title{
-			Title: "Heatmap of bookings",
+			Title: fmt.Sprintf("Heatmap of bookings (n=%d)", len(bookings)),
 		}),
 		charts.WithXAxisOpts(opts.XAxis{
 			Type:      "category",

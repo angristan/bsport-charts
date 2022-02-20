@@ -42,7 +42,9 @@ func BookingsPerWeekLineChart(bookings []api.Booking) *charts.Line {
 
 	line := charts.NewLine()
 	line.SetGlobalOptions(
-		charts.WithTitleOpts(opts.Title{Title: "Number of bookings per week"}),
+		charts.WithTitleOpts(opts.Title{
+			Title: fmt.Sprintf("Number of bookings per week (n=%d)", len(bookings)),
+		}),
 		charts.WithXAxisOpts(opts.XAxis{
 			Name: "Number of bookings",
 		}),

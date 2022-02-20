@@ -1,6 +1,8 @@
 package charts
 
 import (
+	"fmt"
+
 	"github.com/angristan/bsport-charts/api"
 	"github.com/go-echarts/go-echarts/v2/charts"
 	"github.com/go-echarts/go-echarts/v2/opts"
@@ -30,7 +32,9 @@ func genDataForBookingsPerWeekDayBarChart(bookings []api.Booking) []opts.BarData
 func BookingsPerWeekDayBarChart(bookings []api.Booking) *charts.Bar {
 	bar := charts.NewBar()
 	bar.SetGlobalOptions(
-		charts.WithTitleOpts(opts.Title{Title: "Number of bookings per week day"}),
+		charts.WithTitleOpts(opts.Title{
+			Title: fmt.Sprintf("Number of bookings per week day (n=%d)", len(bookings)),
+		}),
 		charts.WithInitializationOpts(opts.Initialization{
 			Width:  "1200px",
 			Height: "600px",
