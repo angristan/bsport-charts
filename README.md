@@ -2,6 +2,8 @@
 
 CLI tool to generate booking charts from the [bsport](https://bsport.io) API.
 
+It uses [go-echarts](https://github.com/go-echarts/go-echarts) to generate the visualizations.
+
 ## Installation
 
 Grab the latest binary from the releases, or build it yourself!
