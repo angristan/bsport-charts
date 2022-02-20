@@ -2,6 +2,10 @@ builds:
   - goos:
       - linux
       - darwin
+      - freebsd
+  - goarch:
+      - amd64
+      - arm64
 changelog:
   sort: asc
   filters:

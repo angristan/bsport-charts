@@ -13,6 +13,7 @@ jobs:
         os:
           - linux
           - darwin
+          - freebsd
         arch:
           - amd64
           - arm64
