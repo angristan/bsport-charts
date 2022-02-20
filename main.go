@@ -47,6 +47,9 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	page.Render(io.MultiWriter(f))
+	err = page.Render(io.MultiWriter(f))
+	if err != nil {
+		logrus.WithError(err).Fatal("Failed to render charts")
+	}
 	logrus.Info("Generated charts.html")
 }
