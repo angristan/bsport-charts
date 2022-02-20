@@ -34,7 +34,7 @@ And open the generated file in your browser.
 
 ## Demo
 
-An example of the output is available in `./charts.example.html`.
+An example of the output is available in `./charts.example.html` and on https://bsport-charts.s3-website.fr-par.scw.cloud/.
 
 ### Heatmap of bookings per weekday and hour of the day
 
