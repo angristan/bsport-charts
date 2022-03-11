@@ -9,27 +9,27 @@ import (
 	"github.com/go-echarts/go-echarts/v2/opts"
 )
 
-func genDataForBookingsPerWeekLineChart(bookings []api.Booking, weeks []string) []opts.LineData {
+func genDataForBookingsPerWeekLineChart(bookings []api.Booking, weeks []string) []opts.BarData {
 	data := make(map[string]int)
 	for _, b := range bookings {
 		year, week := b.OfferDateStart.Local().ISOWeek()
 		data[fmt.Sprintf("%d-%d", year, week)]++
 	}
 
-	items := make([]opts.LineData, 0)
+	items := make([]opts.BarData, 0)
 
 	for _, week := range weeks {
 		if val, ok := data[week]; ok {
-			items = append(items, opts.LineData{Value: val, Name: week})
+			items = append(items, opts.BarData{Value: val, Name: week})
 		} else {
-			items = append(items, opts.LineData{Value: 0, Name: week})
+			items = append(items, opts.BarData{Value: 0, Name: week})
 		}
 	}
 
 	return items
 }
 
-func BookingsPerWeekLineChart(bookings []api.Booking) *charts.Line {
+func BookingsPerWeekLineChart(bookings []api.Booking) *charts.Bar {
 	oldestBooking := bookings[len(bookings)-1]
 
 	weeks := []string{}
@@ -40,7 +40,7 @@ func BookingsPerWeekLineChart(bookings []api.Booking) *charts.Line {
 		date = date.AddDate(0, 0, 7)
 	}
 
-	line := charts.NewLine()
+	line := charts.NewBar()
 	line.SetGlobalOptions(
 		charts.WithTitleOpts(opts.Title{
 			Title: fmt.Sprintf("Number of bookings per week (n=%d)", len(bookings)),
