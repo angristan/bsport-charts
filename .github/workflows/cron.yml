@@ -21,4 +21,4 @@ jobs:
       - name: configure mc
         run: "./mc config host add scw https://s3.fr-par.scw.cloud  ${{ secrets.SCW_ACCESS_KEY }} ${{ secrets.SCW_SECRET_KEY }} --api S3v4"
       - name: deploy to object storage
-        run: ./mc cp charts.html scw/bsport-charts/index.html
+        run: ./mc cp --sc ONEZONE_IA charts.html scw/bsport-charts/index.html
